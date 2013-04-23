@@ -9,7 +9,7 @@ main = shakeArgs options $ do
          , "out/css/impress.css"
          ]
     "out/*.html" *> \out -> do
-        contents <- map ("pandoc" </>) <$> getDirectoryFiles "pandoc" ["*"]
+        contents <- map ("pandoc" </>) <$> getDirectoryFiles "pandoc" ["*.md"]
         after    <- map ("html" </>) <$> getDirectoryFiles "html" ["*after.html"]
         header   <- map ("html" </>) <$> getDirectoryFiles "html" ["*header.html"]
         need contents
