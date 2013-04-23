@@ -1,12 +1,12 @@
-Pandoc test
+Pandoc test {#impress}
 ===========
 
-## Header {#identifier .class key=value}
+## Header {.step .slide}
 This is pandoc test from markdown text.
 Linebreak here.
 
-## Section2
+## Section2 {.step .slide}
 Section2 content
 
-## {#invisible-section}
+## {.step .slide}
 Invisible section
