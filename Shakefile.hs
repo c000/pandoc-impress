@@ -4,8 +4,8 @@ import Development.Shake.FilePath
 
 main :: IO ()
 main = shakeArgs options $ do
-    want ["result.html"]
-    "*.html" *> \out -> do
+    want ["out/index.html"]
+    "out/*.html" *> \out -> do
         contents <- map ("pandoc" </>) <$> getDirectoryFiles "pandoc" ["*"]
         need contents
         system' "pandoc" $ "-s" : "-o" : out : contents
