@@ -16,8 +16,12 @@ main = shakeArgs options $ do
         need after
         need header
         let afterArg = concatMap (\x -> ["-A", x]) after
-        let headerArg = concatMap (\x -> ["-H", x]) header
-        system' "pandoc" $ "-s" : "--section-divs" : "-o" : out : headerArg ++ afterArg ++ contents
+            headerArg = concatMap (\x -> ["-H", x]) header
+            otherOptions = [ "-s"
+                           , "--section-divs"
+                           , "-o", out
+                           ]
+        system' "pandoc" $ otherOptions ++ headerArg ++ afterArg ++ contents
     "out/css/*.css" *> \out -> do
         let source = replaceDirectory out "css"
         need [source]

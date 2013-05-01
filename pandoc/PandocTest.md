@@ -14,3 +14,15 @@ Linebreak here.
 
 ## {.step .slide data-x=2000}
 Invisible section
+
+~~~~{.haskell}
+main :: IO ()
+main = do
+	print 1
+~~~~
+
+~~~~{.C}
+void main () {
+	printf("%d", 1);
+}
+~~~~
